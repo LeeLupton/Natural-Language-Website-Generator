@@ -1,6 +1,5 @@
-// server.js
 const express = require("express");
-const { Configuration, OpenAIApi } = require("openai");
+const OpenAI = require("openai");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 
@@ -9,10 +8,7 @@ dotenv.config();
 const app = express();
 app.use(bodyParser.json());
 
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-const openai = new OpenAIApi(configuration);
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 app.post("/generate", async (req, res) => {
   const prompt = req.body.prompt;
@@ -22,13 +18,18 @@ app.post("/generate", async (req, res) => {
   }
 
   try {
-    const response = await openai.createCompletion({
-      model: "text-davinci-003",
-      prompt: `Generate HTML, CSS, and basic JavaScript for: ${prompt}`,
-      max_tokens: 1500,
-    });
+    const completion = await openai.completions.create({
+      model: "gpt-4o",
+      messages: [
+          { role: "system", content: "You are a helpful assistant." },
+          {
+              role: "user",
+              content: ${prompt},
+          },
+      ],
+  });
 
-    const html_code = response.data.choices[0].text.trim();
+    const html_code = completion.choices[0].text.trim();
     res.json({ html_code });
   } catch (error) {
     console.error("Error generating website:", error);
