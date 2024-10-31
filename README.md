@@ -20,35 +20,43 @@ This repository contains a **Natural Language Website Generator** that uses the 
 
 ## Getting Started
 
-1. **Clone the repository** and install dependencies.
+#### 1. **Clone the repository** and install dependencies.
+
    ```git
    git clone https://github.com/LeeLupton/Natural-Language-Website-Generator.git
    ```
-- After cloning the repository, create an `.env` file in the `/server` directory by copying `.env.example`:
+
+   - Move into the project directory:
+   
+   ```
+   cd Natural-Language-Website-Generator
+   ```
+
+   - After cloning the repository, create an `.env` file in the `/server` directory by copying `.env.example`:
   
-  Linux
-  ```bash
-  cp server/.env.example server/.env
-  ```
+     Linux:
+     ```bash
+     cp server/.env.example server/.env
+     ```
   
-  Windows
-  ```PowerShell
-  Copy-Item -Path "server/.env.example" -Destination "server/.env"
-  ```
+     Windows:
+     ```PowerShell
+     Copy-Item -Path "server/.env.example" -Destination "server/.env"
+     ```
   
-- Install dependencies in `/server` using npm:
+  - Install dependencies in `/server` using npm:
   ```npm
   cd server
   npm install express openai dotenv
   ```
   
-2. **Set up OpenAI API Key** in a `.env` file in the backend.
-   - Open server/.env in your text editor of choice and replace `<your_openai_api_key_here>` with your actual key. Remove the "<...>".
+#### 2. **Set up OpenAI API Key** in a `.env` file in the backend.
+   - Open server/.env in your text editor of choice and replace `<your_openai_api_key_here>` with your actual key. Remove the "<>".
 
-3. **Run the server** to launch the application locally.
+#### 3. **Run the server** to launch the application locally.
    - Starting in the `Natural-Language-Website-Generator/server` directory, run `node server.js`
 
-4. Open the browser and enter prompts to start generating website code in real-time.
+#### 4. Open the browser to `C:/<path-to-cloned-directory>/Natural-Language-Website-Generator/public/index.html` and enter prompts to start generating website code in real-time.
 
 ## Usage Example
 
