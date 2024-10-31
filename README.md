@@ -25,14 +25,17 @@ This repository contains a **Natural Language Website Generator** that uses the 
    git clone https://github.com/LeeLupton/Natural-Language-Website-Generator.git
    ```
 - After cloning the repository, create an `.env` file in the `/server` directory by copying `.env.example`:
+  
   Linux
   ```bash
   cp server/.env.example server/.env
   ```
+  
   Windows
   ```PowerShell
   Copy-Item -Path "server/.env.example" -Destination "server/.env"
   ```
+  
 - Install dependencies in `/server` using npm:
   ```npm
   npm install express openai dotenv
