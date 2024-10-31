@@ -12,17 +12,33 @@ This repository contains a **Natural Language Website Generator** that uses the 
 
 ## Files
 
-- `index.html`: Main HTML file for the user interface.
-- `style.css`: CSS file for styling the UI components.
-- `script.js`: Frontend JavaScript to handle input processing and live preview rendering.
-- `server.js`: Node.js/Express backend for secure API requests.
-- `.env`: Stores sensitive API keys for OpenAI (not included in the repository for security).
+- `public/index.html`: Main HTML file for the user interface.
+- `public/css/style.css`: CSS file for styling the UI components.
+- `public/js/script.js`: Frontend JavaScript to handle input processing and live preview rendering.
+- `server/server.js`: Node.js/Express backend for secure API requests.
+- `server/.env`: Stores sensitive API keys for OpenAI (not included in the repository for security).
 
 ## Getting Started
 
 1. **Clone the repository** and install dependencies.
+   ```git
+   git clone https://github.com/LeeLupton/Natural-Language-Website-Generator.git
+   ```
+- After cloning the repository, create an `.env` file in the `/server` directory by copying `.env.example`:
+  ```bash
+  cp server/.env.example server/.env
+  ```
+  ```PowerShell
+  Copy-Item -Path "server/.env.example" -Destination "server/.env"
+  ```
+- Install dependencies in `/server`:
+    ```npm
+    npm install express openai dotenv
+    ```
 2. **Set up OpenAI API Key** in a `.env` file in the backend.
+   - Replace `<your_openai_api_key_here>` with your actual key. Remove the "<...>".
 3. **Run the server** to launch the application locally.
+   - Starting in the `Natural-Language-Website-Generator` directory, `cd server` and run `node server.js`
 4. Open the browser and enter prompts to start generating website code in real-time.
 
 ## Usage Example
