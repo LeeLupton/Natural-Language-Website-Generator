@@ -12,18 +12,51 @@ This repository contains a **Natural Language Website Generator** that uses the 
 
 ## Files
 
-- `index.html`: Main HTML file for the user interface.
-- `style.css`: CSS file for styling the UI components.
-- `script.js`: Frontend JavaScript to handle input processing and live preview rendering.
-- `server.js`: Node.js/Express backend for secure API requests.
-- `.env`: Stores sensitive API keys for OpenAI (not included in the repository for security).
+- `public/index.html`: Main HTML file for the user interface.
+- `public/css/style.css`: CSS file for styling the UI components.
+- `public/js/script.js`: Frontend JavaScript to handle input processing and live preview rendering.
+- `server/server.js`: Node.js/Express backend for secure API requests.
+- `server/.env`: Stores sensitive API keys for OpenAI (not included in the repository for security).
 
 ## Getting Started
 
-1. **Clone the repository** and install dependencies.
-2. **Set up OpenAI API Key** in a `.env` file in the backend.
-3. **Run the server** to launch the application locally.
-4. Open the browser and enter prompts to start generating website code in real-time.
+#### 1. **Clone the repository** and install dependencies.
+
+   ```git
+   git clone https://github.com/LeeLupton/Natural-Language-Website-Generator.git
+   ```
+
+   - Move into the project directory:
+   
+   ```
+   cd Natural-Language-Website-Generator
+   ```
+
+   - After moving into the repository directory, create an `.env` file in the `/server` directory by copying `.env.example`.
+  
+     Linux:
+     ```bash
+     cp server/.env.example server/.env
+     ```
+  
+     Windows:
+     ```PowerShell
+     Copy-Item -Path "server/.env.example" -Destination "server/.env"
+     ```
+  
+  - Install dependencies in `/server` using npm:
+  ```npm
+  cd server
+  npm install express openai dotenv
+  ```
+  
+#### 2. **Set up OpenAI API Key** in a `.env` file in the backend.
+   - Open server/.env in your text editor of choice and replace `<your_openai_api_key_here>` with your actual key. Remove the "<>".
+
+#### 3. **Run the server** to launch the application locally.
+   - Starting in the `Natural-Language-Website-Generator/server` directory, run `node server.js`
+
+#### 4. Open the browser to `C:/<path-to-cloned-directory>/Natural-Language-Website-Generator/public/index.html` and enter prompts to start generating website code in real-time.
 
 ## Usage Example
 
