@@ -32,7 +32,7 @@ This repository contains a **Natural Language Website Generator** that uses the 
    cd Natural-Language-Website-Generator
    ```
 
-   - After moving into the repository directory, create an `.env` file in the `/server` directory by copying `.env.example`:
+   - After moving into the repository directory, create an `.env` file in the `/server` directory by copying `.env.example`.
   
      Linux:
      ```bash
