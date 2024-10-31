@@ -1,7 +1,10 @@
-const express = require('express');
-const { Configuration, OpenAIApi } = require('openai');
-const bodyParser = require('body-parser');
-require('dotenv').config();
+// server.js
+const express = require("express");
+const { Configuration, OpenAIApi } = require("openai");
+const bodyParser = require("body-parser");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const app = express();
 app.use(bodyParser.json());
@@ -11,12 +14,16 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-app.post('/generate', async (req, res) => {
+app.post("/generate", async (req, res) => {
   const prompt = req.body.prompt;
+
+  if (!prompt) {
+    return res.status(400).json({ error: "Prompt is required" });
+  }
 
   try {
     const response = await openai.createCompletion({
-      model: 'text-davinci-003',
+      model: "text-davinci-003",
       prompt: `Generate HTML, CSS, and basic JavaScript for: ${prompt}`,
       max_tokens: 1500,
     });
@@ -24,7 +31,8 @@ app.post('/generate', async (req, res) => {
     const html_code = response.data.choices[0].text.trim();
     res.json({ html_code });
   } catch (error) {
-    res.status(500).json({ error: 'Error generating website code.' });
+    console.error("Error generating website:", error);
+    res.status(500).json({ error: "Error generating website code" });
   }
 });
 
