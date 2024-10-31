@@ -25,16 +25,18 @@ This repository contains a **Natural Language Website Generator** that uses the 
    git clone https://github.com/LeeLupton/Natural-Language-Website-Generator.git
    ```
 - After cloning the repository, create an `.env` file in the `/server` directory by copying `.env.example`:
+  Linux
   ```bash
   cp server/.env.example server/.env
   ```
+  Windows
   ```PowerShell
   Copy-Item -Path "server/.env.example" -Destination "server/.env"
   ```
-- Install dependencies in `/server`:
-    ```npm
-    npm install express openai dotenv
-    ```
+- Install dependencies in `/server` using npm:
+  ```npm
+  npm install express openai dotenv
+  ```
 2. **Set up OpenAI API Key** in a `.env` file in the backend.
    - Replace `<your_openai_api_key_here>` with your actual key. Remove the "<...>".
 3. **Run the server** to launch the application locally.
