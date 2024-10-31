@@ -40,10 +40,13 @@ This repository contains a **Natural Language Website Generator** that uses the 
   ```npm
   npm install express openai dotenv
   ```
+  
 2. **Set up OpenAI API Key** in a `.env` file in the backend.
-   - Replace `<your_openai_api_key_here>` with your actual key. Remove the "<...>".
+   - Open server/.env in your text editor of choice and replace `<your_openai_api_key_here>` with your actual key. Remove the "<...>".
+
 3. **Run the server** to launch the application locally.
    - Starting in the `Natural-Language-Website-Generator` directory, `cd server` and run `node server.js`
+
 4. Open the browser and enter prompts to start generating website code in real-time.
 
 ## Usage Example
