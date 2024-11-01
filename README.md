@@ -6,7 +6,7 @@ This repository contains a **Natural Language Website Generator** that uses the 
 
 - **Simple User Input**: Accepts natural language descriptions for the type of website the user wants.
 - **OpenAI API Integration**: Calls OpenAI's API to generate HTML, CSS, and JavaScript code based on user input.
-- **Code Preview and Live Render**: Displays the generated code in a text area and shows a live preview.
+- **Code Preview and Live Render**: Displays the generated code in a text area and shows a live preview. (In progress)
 - **Express Backend**: A Node.js/Express backend handles requests to the OpenAI API securely.
 - **Responsive UI**: Built with a simple, responsive layout for ease of use on all devices.
 
