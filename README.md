@@ -32,16 +32,16 @@ This repository contains a **Natural Language Website Generator** that uses the 
    cd Natural-Language-Website-Generator
    ```
 
-   - After moving into the repository directory, create an `.env` file in the `/server` directory by copying `.env.example`.
+   - After moving into the repository directory, create an `.env` file by copying `.env.example`.
   
      Linux:
      ```bash
-     cp server/.env.example server/.env
+     cp .env.example .env
      ```
   
      Windows:
      ```PowerShell
-     Copy-Item -Path "server/.env.example" -Destination "server/.env"
+     Copy-Item -Path ".env.example" -Destination ".env"
      ```
   
   - Install dependencies in `/server` using npm:
