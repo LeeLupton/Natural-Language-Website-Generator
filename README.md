@@ -51,7 +51,7 @@ This repository contains a **Natural Language Website Generator** that uses the 
   ```
   
 #### 2. **Set up OpenAI API Key** in a `.env` file in the backend.
-   - Open server/.env in your text editor of choice and replace `<your_openai_api_key_here>` with your actual key. Remove the "<>".
+   - Open .env in your text editor of choice and replace `<your_openai_api_key_here>` with your actual key. Remove the "<>".
 
 #### 3. **Run the server** to launch the application locally.
    - Starting in the `Natural-Language-Website-Generator/server` directory, run `node server.js`
