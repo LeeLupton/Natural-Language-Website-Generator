@@ -39,7 +39,7 @@ app.get("/generate", async (req, res) => {
       messages: [
         {
           role: "system",
-          content: "You are a website developer that generates HTML, CSS, and JavaScript code based on the user's prompt. Always include all 3 file types no matter what."
+          content: "You are a website developer that generates HTML, CSS, and JavaScript code based on the user's prompt. Always include all 3 file types no matter what. Do not output explainations, just the code. Output as much as you can. Make sure you always reference the files as index.html, styles.css, and script.js."
         },
         { role: "user", content: prompt },
       ],
