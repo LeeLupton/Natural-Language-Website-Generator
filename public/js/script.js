@@ -1,27 +1,32 @@
 async function processInput() {
-    const userInput = document.getElementById('userInput').value;
-    
-    if (!userInput.trim()) {
-      alert('Please enter a description for the website.');
+  const userInput = document.getElementById('userInput').value;
+
+  if (!userInput.trim()) {
+    alert('Please enter a description for the website.');
+    return;
+  }
+
+  document.getElementById('generatedCode').textContent = '';
+  document.getElementById('previewFrame').srcdoc = '';
+
+  // Open an EventSource connection to handle the streaming response
+  const eventSource = new EventSource(`/generate?prompt=${encodeURIComponent(userInput)}`);
+
+  eventSource.onmessage = (event) => {
+    const content = event.data;
+    if (content === "[DONE]") {
+      eventSource.close();
       return;
     }
-  
-    try {
-      const response = await fetch('/generate', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt: userInput })
-      });
-  
-      if (!response.ok) throw new Error('Failed to generate website code.');
-  
-      const data = await response.json();
-      const generatedCode = data.html_code;
-  
-      document.getElementById('generatedCode').textContent = generatedCode;
-      document.getElementById('previewFrame').srcdoc = generatedCode;
-    } catch (error) {
-      alert('Error generating website: ' + error.message);
-    }
-  }
-  
+
+    // Append the received content to the generated code output
+    document.getElementById('generatedCode').textContent += content;
+    document.getElementById('previewFrame').srcdoc += content;
+  };
+
+  eventSource.onerror = (error) => {
+    console.error("Error generating website content:", error);
+    alert("Error generating website content. Please check the server logs for details.");
+    eventSource.close();
+  };
+}
