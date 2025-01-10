@@ -39,7 +39,7 @@ This repository contains a **Natural Language Website Generator** that uses the 
      cp .env.example .env
      ```
   
-     Windows:
+     Windows PowerShell:
      ```PowerShell
      Copy-Item -Path ".env.example" -Destination ".env"
      ```
